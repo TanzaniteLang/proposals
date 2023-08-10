@@ -1,0 +1,12 @@
+<html>
+    <head>
+    </head>
+    <body>
+    {{ set posts = search.pages("type=post") }}
+    {{ for post of posts }}
+        {{ set src = post.src }}
+        {{ set data = post.data }}
+        {{> console.log(post) }}
+    {{ /for }}
+    </body>
+</html>

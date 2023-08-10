@@ -1,0 +1,15 @@
+<html>
+    <head>
+    </head>
+    <body>
+        {{> function capitalize(arr) {
+                return arr.map(e => {
+                    return e[0].toUpperCase() + e.slice(1);
+                });
+            }
+        }}
+        {{ set title = page.src.slug.split("-") }}
+        <h1>TAP {{ title.shift() }} - {{ capitalize(title).join(" ") }}</h1>
+        {{ content }}
+    </body>
+</html>
