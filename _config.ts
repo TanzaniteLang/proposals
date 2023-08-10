@@ -1,18 +1,18 @@
 import lume from "lume/mod.ts";
-import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
 import vento from "lume/plugins/vento.ts";
 import basePath from "lume/plugins/base_path.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
-import terser from "lume/plugins/terser.ts";
+import metas from "lume/plugins/metas.ts";
 
-const site = lume();
+const site = lume({
+  location: new URL("https://tanzanitelang.github.io/taps/"),
+});
 
-site.use(tailwindcss());
+site.use(basePath());
 site.use(postcss());
 site.use(vento());
-site.use(basePath());
 site.use(codeHighlight());
-site.use(terser());
+site.use(metas());
 
 export default site;

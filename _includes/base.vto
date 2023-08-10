@@ -1,12 +1,52 @@
 <html>
     <head>
+        <title>Tanzanite Proposals</title>
     </head>
     <body>
-    {{ set posts = search.pages("type=post") }}
-    {{ for post of posts }}
-        {{ set src = post.src }}
-        {{ set data = post.data }}
-        {{> console.log(post) }}
-    {{ /for }}
+        <h1>Tanzanite Proposals</h1>
+        {{> function capitalize(arr) {
+                return arr.map(e => {
+                    return e[0].toUpperCase() + e.slice(1);
+                });
+            }
+        }}
+        {{ set posts = search.pages("type=proposal") }}
+        {{ for post of posts }}
+            {{ set data = post.data }}
+            {{ set description = post.data.description }}
+            {{ set title = post.src.slug.split("-") }}
+            <div class="post" onclick="window.location.href = '{{ post.src.path }}'\" >
+                <h2>TAP {{ title.shift() }} - {{ capitalize(title).join(" ") }}</h2>
+                <h4>{{ description }}</h4>
+            </div>
+        {{ /for }}
     </body>
+    <style>
+        body {
+            padding: 35px;
+            margin: 0;
+            background-color: #1b1c1f;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            font-family: system-ui;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .post {
+            cursor: pointer;
+            background-color: #262a31;
+            padding: 15px;
+            border-radius: 7.5px;
+            color: lightgray;
+        }
+
+        .post > h2 {
+            color: #CFE4FB;
+        }
+    </style>
 </html>

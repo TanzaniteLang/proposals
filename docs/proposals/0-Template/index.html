@@ -1,30 +1,48 @@
-<html>
-    <head>
-        <title>{{ page.data.title }}</title>
-    </head>
+<!DOCTYPE html>
+<html><head>
+        <title>Tap Template</title>
+    <meta property="og:type" content="website">
+<meta property="og:url" content="https://tanzanitelang.github.io/taps/proposals/0-Template/">
+<meta name="twitter:card" content="summary">
+</head>
     <body>
         <div>
-        {{> function capitalize(arr) {
-                return arr.map(e => {
-                    return e[0].toUpperCase() + e.slice(1);
-                });
-            }
-        }}
-        {{ set title = page.src.slug.split("-") }}
-        <h1>TAP {{ title.shift() }} - {{ capitalize(title).join(" ") }}</h1>
+        
+        
+        <h1>TAP 0 - Template</h1>
         <div style="font-size: 115%;">
-            <span><strong>Author: </strong>{{ page.data.author }}</span>
+            <span><strong>Author: </strong>Ján Gajdoš (gajdos.jan77@gmail.com)</span>
             <br>
-            <span><strong>Status: </strong>{{ page.data.status }}</span>
+            <span><strong>Status: </strong>Active</span>
             <br>
-            <span><strong>Created: </strong>{{ page.data.created }}</span>
+            <span><strong>Created: </strong>10th Aug 2023</span>
         </div>
         <div style="border-top: 1px solid gray; margin-top: 15px;"></div>
         <div>
-        {{ content }}
+        <h1>Introduction</h1>
+<p>This TAP contains template for creating further TAPs also known as ( <strong>Ta</strong>nzanite <strong>P</strong>roposals )<br>
+TAP numbers are assigned in the file name such as <code>0-Template.md</code><br>
+Each new TAP start with number incremented by 1</p>
+<h2>How to write a TAP</h2>
+<p>First, fork the repository, then open proposals directory <br>
+Make new file <code>X-add-xyz.md</code> and setup your markdown like so</p>
+<pre><code class="language-md hljs language-markdown">---
+title: NAME
+description: DESCRIPTION 
+status: Pending
+author: FULL NAME, (EMAIL) 
+created: DAY NUMBER + SUFFIX, CAPITALIZE MONTH IN 3 LETTERS, YEAR
+<span class="hljs-section">layout: post.vto
+---</span>
+&lt;!-- Replace with content of the proposal --&gt;
+</code></pre>
+<blockquote>
+<p>The status will be updated by maintainers of the repository</p>
+</blockquote>
+
         </div>
         </div>
-    </body>
+    
     <style>
         @import "../../code.css";
         body {
@@ -184,6 +202,5 @@
         textarea {
             max-width: 100%;
         }
-    </style
-
-</html>
+    </style>
+</body></html>
