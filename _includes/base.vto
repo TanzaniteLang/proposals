@@ -15,7 +15,7 @@
             {{ set data = post.data }}
             {{ set description = post.data.description }}
             {{ set title = post.src.slug.split("-") }}
-            <div class="post" onclick="window.location.href = '{{ post.src.path }}'\" >
+            <div class="post" onclick="window.location.href = '.{{ post.src.path }}'\" >
                 <h2>TAP {{ title.shift() }} - {{ capitalize(title).join(" ") }}</h2>
                 <h4>{{ description }}</h4>
             </div>
