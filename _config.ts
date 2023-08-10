@@ -9,6 +9,7 @@ const site = lume({
   location: new URL("https://tanzanitelang.github.io/taps/"),
 });
 
+site.ignore("docs");
 site.use(basePath());
 site.use(postcss());
 site.use(vento());
