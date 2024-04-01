@@ -1,2 +1,2 @@
 # Tanzanite Proposals
-Repository for Tanzanite proposals
+> NOTICE: Repository moved to <a href="https://codeberg.org/Tanzanite/taps">Codeberg</a>
